@@ -12,7 +12,7 @@ int main() {
 #endif
 
 
-    
+
     int N;
     scanf("%d", &N);
     std::vector <int> vec;
