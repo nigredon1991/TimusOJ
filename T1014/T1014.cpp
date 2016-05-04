@@ -11,6 +11,7 @@ int main() {
     freopen("C:/Users/admin/ClionProjects/TimusOJ/T1014/input.txt", "rt", stdin);
 #endif
 
+    
 
 
     int N;
