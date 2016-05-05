@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include <vector>
-#include <algorithm>
+
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -16,34 +16,36 @@ int main() {
 
     int N;
     scanf("%d", &N);
-    std::vector <int> vec;
-    int sqrtn = (int)sqrt(N);
-    int  n = N;
-    int k = 0;
-    int j = 0;
-    for(;n!=1;j++){
-        for(int i = 2; i < sqrtn;i++){
-            if(n%i==0){
-                vec.push_back(i);
-                j++;
-                n = n/i;
-                i = sqrtn;
-                k = 1;
-            }
-        }
-        if(k==0){
-            vec.push_back(n);
-            j++;
-            n = 1;
-        }
-        k = 0;
-        if(vec[j-1]>9) n = 1;
-    }
-    if(vec[j]>9) {
-        printf("%d", -1);
+    if(N==0){printf("%d",10);
         return 0;
     }
-    for(std::vector<int>::iterator i = vec.begin();i != vec.end();i++) {
+    if( N ==1|| N==2 || N ==3){
+        printf("%d", N);
+        return 0;
+    }
+    std::vector <int> vec;
+    int k = 9;
+    bool check = false;
+    while(N!=1){
+        for(; k>1;k--){
+            if(N%k==0){
+                vec.push_back(k);
+                N = N/k;
+                check =true;
+                break;
+            }
+        }
+        if(!check){
+            printf("%d", -1);
+            return 0;
+        }
+        else
+            check = false;
+        k = 9;
+    }
+
+    for(std::vector<int>::iterator i = vec.end();i != vec.begin();) {
+        i--;
         printf("%d", *i);
     }
     return 0;
