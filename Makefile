@@ -7,7 +7,7 @@ DEBUG = '-g'
 default:
 	#$(MAKE) $(TARGET1) -o exe
 	gcc $(DEBUG) $(TARGET1) -o out
-	./out < input_1002.txt 
+	./out < input
 
 clean:
 	@rm -f *.o .*.cmd .*.flags *.mod.c *.order
