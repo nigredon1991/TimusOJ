@@ -37,9 +37,11 @@ int main()
 	char buffer[50];
 	int calc = 0;
 	for (int i = 0; i <= N; i++) {
-		gets(buffer);
-		scanf("^%s$", &buffer);
-		/* printf("%s\n", buffer); */
+		/* gets(buffer); */
+		/* scanf("%[^\n]s", buffer); */
+		/* scanf("^%s$", &buffer); */
+		fgets(buffer, 40, stdin);
+		printf("%s\n", buffer);
 		if (hash[hash_map(buffer)] == 'B' &&
 		    hash2[hash_map2(buffer)] == 'B')
 			calc++;
