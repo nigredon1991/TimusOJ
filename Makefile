@@ -1,5 +1,5 @@
 PWD = $(shell pwd)
-TARGET1 = 1002.c
+TARGET1 = $(shell basename $(PWD)).c
 DEBUG = '-g'
 
 #obj-m	:= $(TARGET1).o
