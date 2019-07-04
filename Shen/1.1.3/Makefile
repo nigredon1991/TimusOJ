@@ -20,8 +20,7 @@ disclean: clean
 
 test:
 	for i in 1 2; do \
-		echo "$$i" ; \
 		sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" input | ./out > temp ; \
 		sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" exp> exp_$$i ; \
-		diff temp exp_$$i ; \
+		diff temp exp_$$i && echo "test $$i OK" || echo "test $$i FAILED"  ; \
 	done 
