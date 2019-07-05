@@ -18,7 +18,7 @@ clean:
 disclean: clean
 	@rm *.ko *.symvers
 
-test:
+test: default
 	for i in 1 2; do \
 		sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" input | ./out > temp ; \
 		sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" exp> exp_$$i ; \

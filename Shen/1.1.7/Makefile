@@ -19,7 +19,7 @@ disclean: clean
 	@rm *.ko *.symvers
 
 test: default
-	for i in 1 2; do \
+	for i in 1 2 3; do \
 		sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" input | ./out > temp ; \
 		sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" exp> exp_$$i ; \
 		diff temp exp_$$i && echo "test $$i OK" || echo "test $$i FAILED"  ; \
