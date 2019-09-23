@@ -1,5 +1,5 @@
 PWD = $(shell pwd)
-TARGET1 = main.c
+TARGET1 = main_1.c # main.c
 DEBUG = '-g'
 SHELL = /bin/sh
 
