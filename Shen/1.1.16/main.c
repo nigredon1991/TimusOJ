@@ -10,15 +10,18 @@ int main() {
 	q = 0;
 	r = 0;
 	s = 1;
+	int temp = 0;
 	while (!((n == 0) || (m == 0))) {
 		if (m >= n) {
-			m = m - n;
-			p = p - r;
-			q = q - s;
+			temp = m / n;
+			m = m % n;
+			p = p - temp * r;
+			q = q - temp * s;
 		} else {
-			n = n - m;
-			r = r - q;
-			s = s - q;
+			temp = n / m;
+			n = n % m;
+			r = r - temp * q;
+			s = s - temp * q;
 		}
 	}
 	if (m == 0) {
@@ -30,9 +33,8 @@ int main() {
 		x = p;
 		y = q;
 	}
-
 	if (x > y) {
-		int temp = x;
+		temp = x;
 		x = y;
 		y = temp;
 	}
