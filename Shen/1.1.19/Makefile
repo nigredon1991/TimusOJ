@@ -7,7 +7,8 @@ SHELL = /bin/sh
 
 default:
 	#$(MAKE) $(TARGET1) -o exe
-	gcc $(DEBUG) $(TARGET1) -o out
+	gcc -std=c1x $(DEBUG) $(TARGET1) -o out
+	#clang -std=c11 $(DEBUG) $(TARGET1) -o out
 
 clean:
 	@rm -f *.o .*.cmd .*.flags *.mod.c *.order
@@ -22,5 +23,5 @@ test: default
 	for i in 1 2 3 4 5 6 7; do \
 		sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" input | ./out > temp ; \
 		sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" exp> exp_$$i ; \
-		diff temp exp_$$i && echo "test $$i OK" || echo "test $$i FAILED"  ; \
+		diff temp exp_$$i && echo "test $$i OK" || { echo "test $$i FAILED" ; echo " INPUT:" ; sed -n "/#$$i/{s/#$$i \(.*\)/\1/p}" input ; } ; \
 	done 

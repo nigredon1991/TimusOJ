@@ -15,9 +15,9 @@ int main() {
 			m = m / 2;
 			n = n / 2;
 		} else if (m % 2 == 0 && n % 2 == 1) {
-			m = m % 2;
+			m = m / 2;
 		} else if (m % 2 == 1 && n % 2 == 0) {
-			n = n % 2;
+			n = n / 2;
 		} else if (m % 2 == 1 && n % 2 == 1 && m >= n) {
 			m = m - n;
 		} else if (m % 2 == 1 && n % 2 == 1 && m <= n) {

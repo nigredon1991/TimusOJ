@@ -17,10 +17,11 @@ int main() {
 			q = q - s;
 		} else {
 			n = n - m;
-			r = r - q;
+			r = r - p;
 			s = s - q;
 		}
 	}
+	/* printf("DEBUG: m=%d, n=%d, %d,%d,%d,%d\n", m, n, p, q, r, s); */
 	if (m == 0) {
 		k = n;
 		x = r;
@@ -29,12 +30,6 @@ int main() {
 		k = m;
 		x = p;
 		y = q;
-	}
-
-	if (x > y) {
-		int temp = x;
-		x = y;
-		y = temp;
 	}
 
 	printf("%d %d %d\n", k, x, y);

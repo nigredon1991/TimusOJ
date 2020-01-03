@@ -20,7 +20,7 @@ int main() {
 		} else {
 			temp = n / m;
 			n = n % m;
-			r = r - temp * q;
+			r = r - temp * p;
 			s = s - temp * q;
 		}
 	}
@@ -32,11 +32,6 @@ int main() {
 		k = m;
 		x = p;
 		y = q;
-	}
-	if (x > y) {
-		temp = x;
-		x = y;
-		y = temp;
 	}
 
 	printf("%d %d %d\n", k, x, y);
