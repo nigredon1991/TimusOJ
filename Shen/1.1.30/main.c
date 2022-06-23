@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int main() {
+//TODO Не помню, что тут вообще происходит, надо разобраться
 	int n, k, l = 0, r = 1;
 	scanf("%d %d", &n, &k);
 	while (l != k) {
